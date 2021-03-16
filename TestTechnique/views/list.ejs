@@ -1,0 +1,30 @@
+<h1 class="display-4">Arrivals</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>title</th>
+            <th>name</th>
+            <th>date</th>
+            <th>time</th>
+            <th>email</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <%  arrivallist.forEach(function(arrivals) { %>
+            <tr>
+                <td><%= arrivals.id %></td>
+                <td><%= arrivals.title %></td>
+                <td><%= arrivals.name %></td>
+                <td><%= arrivals.date %></td>
+                <td><%= arrivals.time %></td>
+                <td><%= arrivals.email %></td>
+                <td>
+                    <a href="/ArrivalList/edit/<%= arrivals.id %>" class="btn btn-primary">Modifier</a>
+                    <a href="/ArrivalList/delete/<%= arrivals.id %>" class="btn btn-danger">Effacer</a>
+                </td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>
