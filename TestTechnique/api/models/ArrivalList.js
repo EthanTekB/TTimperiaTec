@@ -31,7 +31,9 @@ module.exports = {
             type: 'string',
             isEmail: true,
         },
-
+        user: {
+            model: 'user'
+        }
   },
 
 };

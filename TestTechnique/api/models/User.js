@@ -20,7 +20,7 @@ module.exports = {
     		password: {
     		  type: 'string',
     		  required: true
-    		}
+			},
   },
   customToJSON: function() {
 		 return _.omit(this, ['password'])

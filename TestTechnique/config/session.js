@@ -21,6 +21,12 @@ module.exports.session = {
   secret: '43c1de1c1a2471b52dde269e63cf0958',
 
 
+  adapter: 'connect-mongo',
+  url: 'mongodb://@localhost:27017/ImperiaTecTestTechnique',
+	collection: 'sessions',
+	auto_reconnect: false,
+	ssl: false,
+	stringify: true
   /***************************************************************************
   *                                                                          *
   * Customize when built-in session support will be skipped.                 *

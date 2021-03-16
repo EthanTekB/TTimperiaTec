@@ -6,8 +6,9 @@
  */
 
 module.exports = {
-    list:function(req, res) {
-        ArrivalList.find({}).exec(function(err, Arrivals) {
+    list: function (req, res) {
+        userId = req.session.passport.user
+        ArrivalList.find({user: userId}).exec(function(err, Arrivals) {
             if (err) {
                 res.send(500, {error: 'Database Error'});
             }
@@ -23,8 +24,9 @@ module.exports = {
         var date = req.body.date;
         var time = req.body.time;
         var email = req.body.email;
+        var userId = req.session.passport.user;
 
-        ArrivalList.create({ title: title, name: name, date: date, time: time, email: email }).exec(function(err){
+        ArrivalList.create({ title: title, name: name, date: date, time: time, email: email, user: userId}).exec(function(err){
             if(err) {
                 res.send(500, {error: 'Create in Database Error'})
             }
