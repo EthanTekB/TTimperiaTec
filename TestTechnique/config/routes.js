@@ -19,12 +19,15 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': { view: 'pages/homepage' },
+  '/': { 	view: 'user/login' },
+	'post /login': 'AuthController.login',
   '/ArrivalList/list': 'ArrivalListController.list',
   'GET /ArrivalList/edit/:id': 'ArrivalListController.edit',
   'GET /ArrivalList/delete/:id': 'ArrivalListController.delete',
   'POST /ArrivalList/update/:id': 'ArrivalListController.update',
-
+	'GET /register': { view: 'user/register'},
+	'post /register': 'AuthController.register',
+	'/logout': 'AuthController.logout',
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *
